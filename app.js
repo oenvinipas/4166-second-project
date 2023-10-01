@@ -1,6 +1,7 @@
 //require modules
 const express = require("express");
 const morgan = require("morgan");
+const eventRoutes = require("./routes/eventRoutes");
 
 //create app
 const app = express();
@@ -19,6 +20,8 @@ app.use(morgan("tiny"));
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.use('/events', eventRoutes);
 
 //start server
 app.listen(port, host, () => {
