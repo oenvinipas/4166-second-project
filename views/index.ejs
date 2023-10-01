@@ -1,5 +1,54 @@
-<%- include('./partials/header.ejs') %>
+<%- include('./partials/beginHeader.ejs') %>
+    <link rel="stylesheet" type="text/css" href="styles/index.css" >
+    <title>49erHangout - Home</title>
+<%- include('./partials/endHeader.ejs') %>
 
+<main>
+  <section id="hero">
+    <div class="hero-div">
+      <h1>Start a new adventure!</h1>
+      <p>
+        Welcome to 49ersHangout, a place where you can start or join an
+        adventure.
+      </p>
+      <a href="pages/newEvent.html" class="gold-anchor">New Event</a>
+    </div>
+  </section>
 
+  <!-- join an upcoming event section? show 3 events ig -->
+  <section class="events">
+    <h2>Looking for an event...?</h2>
+    <div class="events-container">
+      <div class="event">
+        <h3>Professional In Residence</h3>
+        <p>
+          Attend this Meet Up to learn how to tailor your resume for roles in
+          tech, data, and analytics.
+        </p>
+        <a href="pages/event.html" class="event-anchor">More Info</a>
+      </div>
+      <div class="event">
+        <h3>NINER CAREER CHALLENGE...</h3>
+        <p>
+          The University Career Center will host the Niner Career Challenge!
+          This is a chance for students to Win Spring 2024 Tuition*, up to
+          $3,500 and other monthly prizes!
+        </p>
+        <a href="pages/event.html" class="event-anchor">More Info</a>
+      </div>
+      <div class="event">
+        <h3>49ERS WOMEN'S SOCCER...</h3>
+        <p>
+          <a
+            href="https://www.espn.com/watch/player/_/id/dc485364-2908-411d-977e-54b0757c086e"
+            >Watch Live on September 28th at 7pm!</a
+          >
+        </p>
+        <a href="pages/event.html" class="event-anchor">More Info</a>
+      </div>
+    </div>
+    <a href="pages/events.html" class="gold-anchor stretched">See All Events</a>
+  </section>
+</main>
 
 <%- include('./partials/footer.ejs') %>
