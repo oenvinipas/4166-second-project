@@ -1,6 +1,7 @@
 //require modules
 const express = require("express");
 const morgan = require("morgan");
+const mainRoutes = require("./routes/mainNavigation");
 const eventRoutes = require("./routes/eventRoutes");
 
 //create app
@@ -17,9 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
 
 //setup routes
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use("/", mainRoutes);
 
 app.use('/events', eventRoutes);
 

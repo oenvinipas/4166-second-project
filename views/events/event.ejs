@@ -1,8 +1,41 @@
 <%- include('./../partials/beginHeader.ejs') %>
-    <link rel="stylesheet" type="text/css" href="styles/event.css" >
-    <title>49erHangout - Event</title>
+<link rel="stylesheet" type="text/css" href="/styles/event.css" >
+<title>49erHangout - Event</title>
 <%- include('./../partials/endHeader.ejs') %>
 
-
+<main>
+  <section class="category">
+    <div class="event">
+      <div class="image">
+        <img src="<%= event.image %>" alt="filler image" />
+      </div>
+      <div class="info">
+        <div class="info-header">
+          <div class="info-header-h3">
+            <h3 class="info-header-children"><%= event.title %></h3>
+            <h4 class="info-header-children">Host: <%= event.hostName %></h4>
+            <small class="date-location info-header-children"
+              >Date: <%= event.startDate %> - <%= event.endDate %></small
+            >
+            <small
+              id="more-space-under"
+              class="date-location info-header-children"
+              >Location: <%= event.location %></small
+            >
+          </div>
+          <div class="info-header-options">
+            <a href="#"><i class="fa-solid fa-pen-to-square green-icon"></i></a>
+            <a href="#"><i class="fa-solid fa-trash-can red-icon"></i></a>
+          </div>
+        </div>
+        <div class="info-description">
+          <p>
+            <%= event.details %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <%- include('./../partials/footer.ejs') %>

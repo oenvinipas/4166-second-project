@@ -30,7 +30,7 @@ main {
 
 .info-header {
   display: grid;
-  grid-template-columns: 2fr auto;
+  grid-template-columns: 2fr 1fr;
   align-items: center;
 }
 
@@ -92,11 +92,6 @@ main {
   .event {
     display: flex;
     flex-direction: column;
-  }
-
-  .info-header-h3 a,
-  .info-header-date {
-    text-align: center;
   }
 
   .image img {

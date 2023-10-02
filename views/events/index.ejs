@@ -4,24 +4,23 @@
 <%- include('./../partials/endHeader.ejs') %>
 
 <main>
-
     <% if (events.length > 0) { %>
         <section class="category">
             <% events.forEach(event => { %>
                 <h2><%= event.category %></h2>
                     <div class="event">
                         <div class="image">
-                            <img src=<%= event.image %> alt="filler image" />
+                            <img src=<%= event.image %> alt="filler image" >
                         </div>
                         <div class="info">
                             <div class="info-header">
                                 <div class="info-header-h3">
-                                    <a href="event.html">
+                                    <a href="/events/<%= event.id %>">
                                     <h3><%= event.title %> <i class="fa-solid fa-up-right-from-square dark-icon"></i></h3>
                                     </a>
                                 </div>
                                 <div class="info-header-date">
-                                    <p><%= event.startDate %> - <%= event.endDate %></p>
+                                    <p>Date: <%= event.startDate %> - <%= event.endDate %></p>
                                 </div>
                             </div>
                             <div class="info-description">
