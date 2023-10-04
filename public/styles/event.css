@@ -53,13 +53,19 @@ main {
   padding-bottom: 1rem;
 }
 
-.info-header-options {
+.info-header-options form {
   display: flex;
   gap: 2rem;
 }
 
-.info-header-options a {
+.info-header-options button {
+  background: none;
+  border: none;
   font-size: 1.4rem;
+}
+
+.info-header-options button:hover {
+  cursor: pointer;
 }
 
 .image {

@@ -3,7 +3,7 @@
     <title>49erHangout - Events</title>
 <%- include('./../partials/endHeader.ejs') %>
 
-<main>
+  <main>
       <section class="starting" id="new-event">
         <div class="starting-div">
           <h1>New Event</h1>
@@ -19,7 +19,7 @@
                   --Select a category--
                 </option>
                 <option value="Athletics">Athletics</option>
-                <option value="Academics">Academic</option>
+                <option value="Academic">Academic</option>
                 <option value="Career">Career</option>
                 <option value="Creative">Creative</option>
                 <option value="Other">Other</option>
@@ -42,8 +42,13 @@
             </div>
 
             <div class="label-input-container">
-              <label for="where">Where <span class="required">*</span></label>
-              <input type="text" id="where" name="where" placeholder="location" required >
+              <label for="location">Where <span class="required">*</span></label>
+              <input type="text" id="location" name="location" placeholder="location" required >
+            </div>
+            
+            <div class="label-input-container">
+              <label for="host">Host <span class="required">*</span></label>
+              <input type="text" id="host" name="host" placeholder="Host" required >
             </div>
 
             <div class="label-input-container">
@@ -65,6 +70,6 @@
           </form>
         </div>
       </section>
-    </main>
+  </main>
 
 <%- include('./../partials/footer.ejs') %>

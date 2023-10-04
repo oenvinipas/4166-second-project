@@ -7,13 +7,13 @@
   <section class="category">
     <div class="event">
       <div class="image">
-        <img src="<%= event.image %>" alt="filler image" />
+        <img src="<%= event.image %>" alt="filler image" >
       </div>
       <div class="info">
         <div class="info-header">
           <div class="info-header-h3">
             <h3 class="info-header-children"><%= event.title %></h3>
-            <h4 class="info-header-children">Host: <%= event.hostName %></h4>
+            <h4 class="info-header-children">Host: <%= event.host %></h4>
             <small class="date-location info-header-children"
               >Date: <%= event.startDate %> - <%= event.endDate %></small
             >
@@ -24,8 +24,10 @@
             >
           </div>
           <div class="info-header-options">
-            <a href="#"><i class="fa-solid fa-pen-to-square green-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-trash-can red-icon"></i></a>
+            <form>
+              <button type="submit" formmethod="GET" formaction="/events/<%= event.id %>/edit"><i class="fa-solid fa-pen-to-square green-icon"></i></button>
+              <button type="submit" formmethod="POST" formaction="/events/<%= event.id %>?_method=DELETE"><i class="fa-solid fa-trash-can red-icon"></i></button>
+            </form>
           </div>
         </div>
         <div class="info-description">

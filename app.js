@@ -1,6 +1,7 @@
 //require modules
 const express = require("express");
 const morgan = require("morgan");
+const methodOverride = require("method-override");
 const mainRoutes = require("./routes/mainNavigation");
 const eventRoutes = require("./routes/eventRoutes");
 
@@ -16,6 +17,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
+app.use(methodOverride("_method"))
 
 //setup routes
 app.use("/", mainRoutes);
