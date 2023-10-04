@@ -145,10 +145,26 @@ const events = [
     image: "/images/fillerImage.jpg",
     location: "UNC Charlotte",
   },
-];
+]
 
+const filterByCategory = () => {
+  // console.log([...new Set(events.map((event) => event.category))]);
+  return [...new Set(events.map(event => event.category))];
+}
 
-exports.find = () => events
+exports.find = () => {
+  const categories = filterByCategory();
+  return categories.map(category => {
+    console.log({
+      title: category,
+      events: events.filter((event) => event.category === category),
+    });
+    return {
+      header: category,
+      events: events.filter(event => event.category === category),
+    }
+  })
+}
 
 exports.findById = (id) => {
   return events.find(event => event.id === id);
