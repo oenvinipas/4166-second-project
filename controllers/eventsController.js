@@ -55,7 +55,7 @@ exports.updateEvent = (req, res, next) => {
     let event = req.body;
     let id = req.params.id;
     if (model.update(id, event)) {
-        res.redirect('/events')
+        res.redirect('/events/' + id)
     } else {
         let err = new Error("Cannot find a event with id " + id);
         err.status = 404;

@@ -17,29 +17,17 @@
 
   <!-- join an upcoming event section? show 3 events ig -->
   <section class="events">
-    <h2>Looking for an event...?</h2>
+    <h2>Looking for an Event...?</h2>
     <div class="events-container">
-      <div class="event">
-        <h3><%= events[0].title %></h3>
-        <p>
-          <%= events[0].details %>
-        </p>
-        <a href="/events/<%= events[0].id %>" class="event-anchor">More Info</a>
-      </div>
-      <div class="event">
-        <h3><%= events[1].title %></h3>
-        <p>
-          <%= events[1].title %>
-        </p>
-        <a href="/events/<%= events[1].id %>" class="event-anchor">More Info</a>
-      </div>
-      <div class="event">
-        <h3><%= events[2].title %></h3>
-        <p>
-          <%= events[2].details %>
-        </p>
-          <a href="/events/<%= events[2].id %>" class="event-anchor">More Info</a>
+      <% events.forEach(event => { %>
+        <div class="event">
+          <h3><%= event.events[0].title %></h3>
+          <p>
+            <%= event.events[0].details %>
+          </p>
+          <a href="/events/<%= event.events[0].id %>" class="event-anchor">More Info</a>
         </div>
+      <% }) %>
     </div>
     <a href="/events" class="gold-anchor stretched">See All Events</a>
   </section>
