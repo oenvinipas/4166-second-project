@@ -3,11 +3,13 @@
 <title>49erHangout - Event</title>
 <%- include('./../partials/endHeader.ejs') %>
 
+<% console.log(event.image) %>
+
 <main>
   <section class="category">
     <div class="event">
       <div class="image">
-        <img src="<%= event.image %>" alt="filler image" >
+        <img src="<%= typeof event.image !== 'undefined' ? event.image : '/images/fillerImage.jpg' %>" alt="event image" >
       </div>
       <div class="info">
         <div class="info-header">

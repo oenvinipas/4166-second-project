@@ -11,7 +11,7 @@
                 <% event.events.forEach(singleEvent => { %>
                         <div class="event">
                             <div class="image">
-                                <img src=<%= singleEvent.image %> alt="filler image" >
+                                <img src=<%= typeof singleEvent.image !== 'undefined' ? singleEvent.image : "/images/fillerImage.jpg" %> alt="filler image" >
                             </div>
                             <div class="info">
                                 <div class="info-header">

@@ -178,8 +178,6 @@ exports.save = (event, body) => {
   event.id = uuidv4();
   event.startDate = body.start
   event.endDate = body.end
-  // event.image = body.image;
-  event.image = "/images/fillerImage.jpg";
   events.push(event);
 }
 
