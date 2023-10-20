@@ -31,21 +31,26 @@ exports.postEvent = (req, res, next) => {
 };
 
 exports.getEventById = (req, res, next) => {
-  let id = req.params.id;
-  let event = JSON.parse(JSON.stringify(model.findById(id)));
-  event.startDate = DateTime.fromISO(event.startDate).toLocaleString(
-    DateTime.DATETIME_MED
-  );
-  event.endDate = DateTime.fromISO(event.endDate).toLocaleString(
-    DateTime.DATETIME_MED
-  );
-  console.log(event);
-  if (!event) {
-    let err = new Error("Cannot find a event with id " + id);
-    err.status = 404;
-    next(err);
+  try {
+    let id = req.params.id;
+    let event = JSON.parse(JSON.stringify(model.findById(id)));
+    // if (!event) {
+    //   let err = new Error("Cannot find a event with id " + id);
+    //   err.status = 404;
+    //   next(err);
+    // }
+    event.startDate = DateTime.fromISO(event.startDate).toLocaleString(
+      DateTime.DATETIME_MED
+    );
+    event.endDate = DateTime.fromISO(event.endDate).toLocaleString(
+      DateTime.DATETIME_MED
+    );
+    res.render("./events/event", { event });
+  } catch (err) {
+      const error = new Error("Cannot find a event");
+      error.status = 404;
+      next(error);
   }
-  res.render("./events/event", { event });
 };
 
 exports.editEvent = (req, res, next) => {
@@ -62,7 +67,13 @@ exports.editEvent = (req, res, next) => {
 
 exports.updateEvent = (req, res, next) => {
   let event = req.body;
-  event.image = `/images/${req.file.filename}`;
+  if (req.file) {
+    event.image = `/images/${req.file.filename}`;
+  } else {
+    let err = new Error("Cannot find image file");
+    err.status = 404;
+    next(err);
+  }
   let id = req.params.id;
   if (model.update(id, event)) {
     res.redirect("/events/" + id);

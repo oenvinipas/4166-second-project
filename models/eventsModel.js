@@ -163,7 +163,9 @@ exports.find = () => {
 }
 
 exports.findById = (id) => {
-  return events.find(event => event.id === id);
+  const event = events.find(event => event.id === id);
+  if (!event) throw new Error("Could not find event with id " + id);
+  return event;
 }
 
 exports.convertTime = (time) => {
