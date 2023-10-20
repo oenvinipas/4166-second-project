@@ -1,11 +1,16 @@
 main {
   height: 57vh;
   width: 80vw;
-  margin: 1rem auto;
+  margin: auto;
+}
+
+main h1 {
+  margin: 5rem 0;
+  font-size: 3rem;
+  text-align: center;
 }
 
 .category {
-  height: inherit;
   display: flex;
   align-items: center;
 }

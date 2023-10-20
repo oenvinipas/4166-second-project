@@ -178,7 +178,6 @@ exports.save = (event, body) => {
 }
 
 exports.update = (id, updatedEvent) => {
-  console.log(updatedEvent)
   let event = events.find(event => event.id === id)
   if (!event) {
     console.log("No event found for id " + id)

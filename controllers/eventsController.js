@@ -51,7 +51,6 @@ exports.getEventById = (req, res, next) => {
 exports.editEvent = (req, res, next) => {
   let id = req.params.id;
   let event = model.findById(id);
-  // console.log(event);
   if (event) {
     res.render("./events/edit", { event });
   } else {
