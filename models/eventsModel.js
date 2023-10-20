@@ -155,10 +155,6 @@ const filterByCategory = () => {
 exports.find = () => {
   const categories = filterByCategory();
   return categories.map(category => {
-    // console.log({
-    //   title: category,
-    //   events: events.filter((event) => event.category === category),
-    // });
     return {
       header: category,
       events: events.filter(event => event.category === category),
@@ -182,6 +178,7 @@ exports.save = (event, body) => {
 }
 
 exports.update = (id, updatedEvent) => {
+  console.log(updatedEvent)
   let event = events.find(event => event.id === id)
   if (!event) {
     console.log("No event found for id " + id)
